@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "automatic-udemy-course-enroller-get-paid-udemy-courses-for-free"
+version = "4.1.2"
+description = ""
+authors = [""]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+selenium = "^3.141.0"
+beautifulsoup4 = "^4.11.1"
+"ruamel.yaml" = "^0.16.13"
+cloudscraper = "^1.2.60"
+requests = "^2.27.1"
+webdriver-manager = "^3.7.0"
+aiohttp = {extras = ["speedups"], version = "^3.8.1"}
+price-parser = "^0.3.4"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+isort = "^5.10.1"
+pytest = "^7.1.2"
+pytest-cov = "^3.0.0"
+pytest-asyncio = "^0.18.3"
+bumpver = "^2022.1116"
+
+[tool.bumpver]
+current_version = "4.1.2"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "Bump version {old_version} -> {new_version}"
+commit = true
+tag = true
+push = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = [
+    'current_version = "{version}"',
+    'version = "{version}"',
+]
+"setup.py" = [
+    'version="{version}"',
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
